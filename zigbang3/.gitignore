@@ -34,3 +34,26 @@ yarn-error.*
 
 # typescript
 *.tsbuildinfo
+
+# 시스템 디렉토리 무시
+Application Data/
+Cookies/
+Documents/My Music/
+Documents/My Pictures/
+Documents/My Videos/
+Local Settings/
+My Documents/
+NetHood/
+PrintHood/
+Recent/
+SendTo/
+Templates/
+시작 메뉴/
+
+# 일반적인 설정
+.DS_Store
+node_modules/
+.expo/
+.vscode/
+.gradle/
+*.log
