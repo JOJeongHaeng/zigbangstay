@@ -90,7 +90,7 @@ export default function HomeScreen({ navigation }) {
                 style={styles.logo}
                 resizeMode="contain"
               />
-              <Text style={styles.boxText}>모듈하우스</Text>
+              <Text style={styles.boxText}>직방스테이</Text>
               <Image
                 source={require('../assets/images/homepage/new.png')}
                 style={styles.New}

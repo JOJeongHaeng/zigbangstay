@@ -1,6 +1,6 @@
-import React from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, ImageBackground, Image, Dimensions, ScrollView, Pressable } from 'react-native';
+import { StyleSheet, Text, View, ImageBackground, Image, Dimensions, ScrollView, Pressable, Animated } from 'react-native';
+import { CommonActions } from '@react-navigation/native';
 
 const { width, height } = Dimensions.get('window');
 
@@ -8,6 +8,7 @@ const relativeWidth = (value) => (width / 375) * value;
 const relativeHeight = (value) => (height / 812) * value;
 
 export default function ModuleHomeScreen({ navigation }) {
+
   return (
     <ScrollView style={styles.scrollView} contentContainerStyle={styles.scrollContent}>
       <View style={styles.container}>
@@ -15,23 +16,47 @@ export default function ModuleHomeScreen({ navigation }) {
           source={require('../assets/images/modulepage/modulehouse1.png')}
           style={styles.moduleHouse1}
         >
-          <Text style={styles.mainCategoryText}>모듈하우스</Text>
+          <Text style={styles.mainCategoryText}>직방스테이</Text>
+          <Text style={styles.mainsubText}>나만의 쉼터, 모듈하우스로 경험해보세요.</Text>
           <Pressable
             style={({ pressed }) => [
               { opacity: pressed ? 0.5 : 1 }, // 누를 때 투명도 변경
             ]}
-            onPress={() => navigation.navigate('HomeScreen')}
+            onPress={() => navigation.goBack()}
           >
             <Image
               source={require('../assets/images/modulepage/angle.png')}
               style={styles.Angle}
             />
           </Pressable>
-          <Image
-            source={require('../assets/images/modulepage/menu-bar.png')}
-            style={styles.menuBar}
-          />
-
+          <Pressable
+            style={({ pressed }) => [{ opacity: pressed ? 0.5 : 1 }]}
+            onPress={() => navigation.navigate('MenuScreen')} // 메뉴 열기
+          >
+            <Image
+              source={require('../assets/images/modulepage/menu-bar.png')}
+              style={styles.menuBar}
+              resizeMode="contain"
+            />
+          </Pressable>
+          <Pressable
+            style={({ pressed }) => [{ opacity: pressed ? 0.5 : 1 }]}
+            onPress={() => {
+              navigation.dispatch(
+                CommonActions.reset({
+                  index: 0,
+                  routes: [{ name: 'HomeScreen' }], // 홈 화면으로 스택 재설정
+                })
+              );
+            }}
+          >
+            <Image
+              source={require('../assets/images/modulepage/home.png')}
+              style={styles.homebutton}
+              resizeMode="contain"
+            />
+          </Pressable>
+            
           {/* whiteBoxFirst를 클릭하면 MapScreen으로 이동 */}
           <Pressable 
               style={({ pressed }) => [
@@ -83,6 +108,17 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'flex-start',
   },
+  mainsubText: {
+    position: 'absolute',
+    left: relativeWidth(21.96),
+    top: relativeHeight(164.64),
+    color: '#FFF',
+    marginTop: 10,
+    fontFamily: 'Pretendard',
+    fontSize: relativeWidth(12),
+    fontWeight: '600',
+    lineHeight: relativeWidth(18.018),
+  },
   moduleHouse1: {
     width: width,
     height: relativeHeight(271.396),
@@ -110,6 +146,14 @@ const styles = StyleSheet.create({
   menuBar: {
     position: 'absolute',
     left: relativeWidth(338.88),
+    top: relativeHeight(59.65),
+    width: relativeWidth(19),
+    height: relativeHeight(19),
+    flexShrink: 0,
+  },
+  homebutton:{
+    position: 'absolute',
+    right: relativeWidth(46.12),
     top: relativeHeight(59.65),
     width: relativeWidth(19),
     height: relativeHeight(19),

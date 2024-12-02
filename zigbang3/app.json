@@ -12,9 +12,9 @@
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
-    "ios":{
-      "bundleIdentifier":"com.example.zigbang3",
-      "supportsTablet":true
+    "ios": {
+      "bundleIdentifier": "com.example.zigbang3",
+      "supportsTablet": true
     },
     "android": {
       "adaptiveIcon": {
@@ -24,6 +24,11 @@
     },
     "web": {
       "favicon": "./app/assets/images/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "1204e072-739e-4e95-bc27-3d023357f993"
+      }
     }
   }
 }
