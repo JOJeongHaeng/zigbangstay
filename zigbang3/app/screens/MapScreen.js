@@ -34,48 +34,62 @@ export default function MapScreen({ navigation }) {
     <View style={styles.container}>
       {/* 상단 검색창 */}
       <View style={styles.searchContainer}>
-        <Pressable
-          style={({ pressed }) => [
-            { opacity: pressed ? 0.5 : 1 }, // 누를 때 투명도 변경
-          ]}
-          onPress={() => navigation.goBack()}
-          >
-          <Image
-            source={require('../assets/images/mappage/angle.png')}
-            style={styles.Angle}
+        <View style={{flexDirection: 'row'}}>
+          <Pressable
+            style={({ pressed }) => [
+              { opacity: pressed ? 0.5 : 1 }, // 누를 때 투명도 변경
+            ]}
+            onPress={() => navigation.goBack()}
+            >
+            <Image
+              source={require('../assets/images/mappage/angle.png')}
+              style={styles.angle}
+            />
+          </Pressable>
+          <TextInput
+            style={styles.searchInput}
+            placeholder="지역, 마을 검색"
+            placeholderTextColor="#A2A2A2"
           />
-        </Pressable>
-        <TextInput
-          style={styles.searchInput}
-          placeholder="지역, 마을 검색"
-          placeholderTextColor="#A2A2A2"
-        />
-        <Pressable
+          <Pressable
             style={({ pressed }) => [{ opacity: pressed ? 0.5 : 1 }]}
             onPress={() => {
-              navigation.dispatch(
-                CommonActions.reset({
-                  index: 0,
-                  routes: [{ name: 'HomeScreen' }], // 홈 화면으로 스택 재설정
-                })
-              );
+              navigation.navigate("ChatScreen");
             }}
           >
             <Image
-              source={require('../assets/images/mappage/home.png')}
-              style={styles.homebutton}
+              source={require("../assets/images/mappage/chat.png")}
+              style={[styles.topButton]}
               resizeMode="contain"
             />
           </Pressable>
-        <Pressable
+          <Pressable
+              style={({ pressed }) => [{ opacity: pressed ? 0.5 : 1 }]}
+              onPress={() => {
+                navigation.dispatch(
+                  CommonActions.reset({
+                    index: 0,
+                    routes: [{ name: 'HomeScreen' }], // 홈 화면으로 스택 재설정
+                  })
+                );
+              }}
+            >
+              <Image
+                source={require('../assets/images/mappage/home.png')}
+                style={styles.topButton}
+                resizeMode="contain"
+              />
+            </Pressable>
+          <Pressable
             style={({ pressed }) => [{ opacity: pressed ? 0.5 : 1 }]}
             onPress={() => navigation.navigate('MenuScreen')} // 메뉴 열기
           >
             <Image
               source={require('../assets/images/mappage/menu-bar.png')}
-              style={styles.menubar}
+              style={styles.topButton}
             />
           </Pressable>
+        </View>
       </View>
       {location ? (
         <MapView
@@ -126,9 +140,8 @@ const styles = StyleSheet.create({
   searchContainer: {
     position: 'absolute',
     width: '100%',
+    paddingTop: 50,
     height: 90,
-    paddingLeft: 50,
-    paddingRight: 82,
     zIndex: 10,
     backgroundColor: '#fff',
     padding: 10,
@@ -145,31 +158,19 @@ const styles = StyleSheet.create({
     padding: 10,
     elevation: 5,
   },
-  Angle: {
-    position: 'absolute',
-    left: -37,
-    top: 38,
+  angle: {
+    marginRight:18,
     width: 18,
     height: 22,
-    flexShrink: 0,
   },
-  menubar: {
-    position: 'absolute',
-    right: -65,
-    width: 19,
-    height: 18,
-    flexShrink: 0,
-  },
-  homebutton:{
-    position: 'absolute',
-    right: -35,
-    width: 19,
-    height: 19,
-    flexShrink: 0,
+  topButton: {
+    marginLeft: 10,
+    width: 22,
+    height: 22,
   },
   searchInput: {
+    width: 220,
     height: 40,
-    top:30,
     fontSize: 16,
     textAlign: 'center',
     paddingHorizontal: 10,

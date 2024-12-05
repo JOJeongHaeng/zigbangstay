@@ -5,38 +5,26 @@ import React, { useState } from 'react';
 
 const { width, height } = Dimensions.get('window');
 
-export default function AsiteScreen({ navigation }) {
+export default function CsiteScreen({ navigation }) {
     const [activeIndex, setActiveIndex] = useState(0);
     const [isLiked, setIsLiked] = useState(false); // 하트 상태를 관리
     const images = [
-        require('../../assets/images/sitepage/a1.png'),
-        require('../../assets/images/sitepage/a1.png'),
-        require('../../assets/images/sitepage/a1.png'),
+        require('../../assets/images/sitepage/sC1.png'),
+        require('../../assets/images/sitepage/sC1.png'),
+        require('../../assets/images/sitepage/sC1.png'),
     ];
     const reviewsA = [
       {
         id: 1,
         rating: 5,
-        text: `자연이랑 이렇게 가까이 있을 일이 없었는데 너무 힐링됐어요. 나만의 공간이란 사실이 이렇게 매력적일 줄 알았으면 더 빨리 샀을텐데, 이제라도 사게 돼서 다행인가 싶기도...`,
+        text: "너무 만족 중이에요. 매주 오고 있습니다^^",
         date: "2024.9.23",
       },
       {
         id: 2,
-        rating: 4,
-        text: `매주 주말마다 도시 소음이 시끄러워서 스트레스 받았었는데, 여긴 각자의 시간을 방해받지 않아서 좋아요. 화장실 밖으로 다녀야 되는 건 좀 귀찮지만 만족해요`,
+        rating: 5,
+        text: "가족들이랑 시간 보내기 좋네요. 아이들도 주말만 기다려요",
         date: "2024.8.9",
-      },
-      {
-        id: 3,
-        rating: 5,
-        text: "혼자만의 시간도 즐기고, 다른 사람들과도 만날 수 있는 공간이라 더 매력적이었어요. 너무 혼자만 있다보면 외롭다고 느낄 때가 있었는데 여기선 그런 고민해본 적은 없었던 것 같아요 ㅎㅎ",
-        date: "2024.7.15",
-      },
-      {
-        id: 4,
-        rating: 5,
-        text: "조흔 공기... 조흔 공간... 조흔 시간... 최고...",
-        date: "2024.7.15",
       },
     ];
 
@@ -97,10 +85,10 @@ export default function AsiteScreen({ navigation }) {
           />
           <View style={styles.Section1}>
             <View style={styles.blackBox}>
-              <Text style={{ color: '#FFF', fontWeight: '500', fontsize: 10, lineheight: 16}}>등록번호 92</Text>
+              <Text style={{ color: '#FFF', fontWeight: '500', fontsize: 10, lineheight: 16}}>등록번호 109</Text>
             </View>
-            <Text style={{ fontSize: 12, color: '#404040', fontWeight: '500', lineheight: 16, marginBottom: 4,}}>태안군 00리 374-12 A구역 2호</Text>
-            <Text style={{ fontSize: 20, color: '#404040', fontWeight: '700', marginBottom: 3 }}>매매 1000</Text>
+            <Text style={{ fontSize: 12, color: '#404040', fontWeight: '500', lineheight: 16, marginBottom: 4,}}>태안군 00리 374-12 C구역 1호</Text>
+            <Text style={{ fontSize: 20, color: '#404040', fontWeight: '700', marginBottom: 3 }}>매매 3000</Text>
             <Text style={{ fontSize: 12, color: '#404040', fontWeight: '500', lineheight: 16, letterspacing: 0.12}}>관리비 20만원</Text>
           </View>
           <Image
@@ -115,7 +103,7 @@ export default function AsiteScreen({ navigation }) {
                 style={styles.icon}
                 resizeMode="contain"
               />
-              <Text style={{ fontSize: 12, color: '#404040', fontWeight: '600', lineheight: 18, letterspacing: 0.12}}>실내 면적 19.83㎡ (6평)</Text>
+              <Text style={{ fontSize: 12, color: '#404040', fontWeight: '600', lineheight: 18, letterspacing: 0.12}}>실내 면적 33.06㎡ (10평)</Text>
             </View>
             <View style= {{flexDirection: 'row', marginBottom: 30,}}>
               <Image
@@ -123,7 +111,7 @@ export default function AsiteScreen({ navigation }) {
                 style={styles.icon}
                 resizeMode="contain"
               />
-              <Text style={{ fontSize: 12, color: '#404040', fontWeight: '600', lineheight: 18, letterspacing: 0.12}}>1~2인용 모듈하우스</Text>
+              <Text style={{ fontSize: 12, color: '#404040', fontWeight: '600', lineheight: 18, letterspacing: 0.12}}>2~3인용 모듈하우스</Text>
             </View>
             <View style= {{flexDirection: 'row', marginBottom: 30,}}>
               <Image
@@ -199,13 +187,13 @@ export default function AsiteScreen({ navigation }) {
         <View style={styles.Section4}>
           <Text style={{ fontSize: 15, color: '#404040', fontWeight: '600'}}>옵션</Text>
             <View style={styles.optionContainer}>
-              <View style={styles.columnContainer}>
+            <View style={styles.columnContainer}>
                 <Image
-                  source={require('../../assets/images/sitepage/clothes.png')}
+                  source={require('../../assets/images/sitepage/bath.png')}
                   style={styles.icon}
                   resizeMode="contain"
                 />
-                <Text style={{ fontSize: 12, color: '#BCBCBC', fontWeight: '500', lineheight: 12}}>옷장</Text>
+                <Text style={{ fontSize: 12, color: '#BCBCBC', fontWeight: '500', lineheight: 12}}>개인욕실</Text>
               </View>
               <View style={styles.columnContainer}>
                 <Image
@@ -233,6 +221,14 @@ export default function AsiteScreen({ navigation }) {
               </View>
               <View style={styles.columnContainer}>
                 <Image
+                  source={require('../../assets/images/sitepage/clothes.png')}
+                  style={styles.icon}
+                  resizeMode="contain"
+                />
+                <Text style={{ fontSize: 12, color: '#BCBCBC', fontWeight: '500', lineheight: 12}}>옷장</Text>
+              </View>
+              <View style={styles.columnContainer}>
+                <Image
                   source={require('../../assets/images/sitepage/bookcase.png')}
                   style={styles.icon}
                   resizeMode="contain"
@@ -246,7 +242,7 @@ export default function AsiteScreen({ navigation }) {
         </ScrollView>
         
         <View style={styles.fixedContainer}>
-          <Text style={styles.fixedText}>매매 1000</Text>
+          <Text style={styles.fixedText}>매매 3000</Text>
           <Pressable style={styles.fixedButton} onPress={() => alert("계약 날짜 잡기")}>
             <Text style={{fontSize: 14, color: '#fff', fontWeight: '600', lineheight: 18,}}>계약하기</Text>
           </Pressable>
