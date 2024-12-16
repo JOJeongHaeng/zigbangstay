@@ -32,7 +32,7 @@
 
 ## Zigbangstay 포스터 📺
 | :-------------------------------------------: |
-<src="image/ZigbangstayA0.png"/>
+![ZigbangstayA0](https://github.com/user-attachments/assets/d464df53-0d8f-4732-b099-68d1b7975c31)
 
 ## 주요 기능
 
