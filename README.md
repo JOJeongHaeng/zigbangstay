@@ -31,7 +31,6 @@
 
 
 ## Zigbangstay 포스터 📺
-| :-------------------------------------------: |
 ![ZigbangstayA0](https://github.com/user-attachments/assets/d464df53-0d8f-4732-b099-68d1b7975c31)
 
 ## 주요 기능
@@ -39,4 +38,4 @@
 |모듈러하우스|마을 위치, 정보 확인|커뮤니티와 리뷰 기능|
 |:---:|:---:|:---:|
 |지도에서 원하는 위치의 마을을 선택한 후, 간단한 절차를 통해 원하는 모듈러 하우스를 구매할 수 있습니다.|이용자를 위한 편의시설 안내 및 마을 위치가 구성된 마을 살펴보기, 지도 기능이 있습니다.|세컨하우스 사용자들을 위한 예약일과 관리 소통 커뮤니티와 사용자 리뷰를 통해 투명성과 신뢰성을 제공합니다.|
-<src="image/Zigbang module.png"/><src="image/Zigbang map.png"/><src="image/Zigbang community.png"/>
+|![Zigbang community](https://github.com/user-attachments/assets/96c07e7f-7c6e-4ac5-bf70-6c115a0a20f9)|![Zigbang map](https://github.com/user-attachments/assets/300f8f41-c74f-47b8-bd0a-1af720886801)|![Zigbang module](https://github.com/user-attachments/assets/93dbec26-ae76-475f-bdb4-0792461509fc)
